@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    color: aliceblue;
 }
 
 :root  {
@@ -38,7 +39,7 @@ header {
 }
 
 .search::placeholder{
-    color: #007bff;
+    color: aliceblue;
 }
 
 main {
@@ -54,4 +55,33 @@ main {
 
 .movie img {
     width: 100%;
+}
+
+.overview {
+    position: relative;
+    
+}
+
+
+.overview h3 {
+    background-color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.overview p {
+    background-color: #007bffce;
+    padding-inline: 1rem;
+    padding-top: 1rem;
+    border-radius: 10px;
+    text-align: justify;
+    display: none;
+    color: aliceblue;
+}
+
+.overview:hover p {
+    display: flex;
+    position: absolute;
+    width: 300px;
+    transform: translateY(-100%);
 }
