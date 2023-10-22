@@ -80,14 +80,15 @@ main {
 }
 
 .overview p {
-    background-color: #007bffce;
     border-radius: 10px;
     text-align: justify;
     display: none;
     color: aliceblue;
+
 }
 
 .overview:hover p {
+    background-color: #00447fdf;
     display: flex;
     position: absolute;
     width: 300px;
