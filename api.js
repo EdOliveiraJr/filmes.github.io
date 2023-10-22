@@ -23,13 +23,15 @@ function showMovies(data){
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
             <img src="${img_url+poster_path}" alt="${title}">
-            <div class="movie-info">
+            <div class="infos">
+                <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
             <div class="overview">
-                <h3>Overview</h3>
+                <h5>Sinopse</h5>
                 <p>${overview}<p>
+            </div>
             </div>    
         `;
 

@@ -55,6 +55,18 @@ main {
 
 .movie img {
     width: 100%;
+    box-shadow: #000000 0px 0px 50px;
+}
+
+.infos {
+    background-color: var(--secondary-color);
+    border-radius: 0 0 10px 10px;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .overview {
@@ -63,16 +75,12 @@ main {
 }
 
 
-.overview h3 {
-    background-color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.overview h5 {
+    padding: 10px;
 }
 
 .overview p {
     background-color: #007bffce;
-    padding-inline: 1rem;
-    padding-top: 1rem;
     border-radius: 10px;
     text-align: justify;
     display: none;
@@ -84,4 +92,5 @@ main {
     position: absolute;
     width: 300px;
     transform: translateY(-100%);
+    padding: 5px;
 }
