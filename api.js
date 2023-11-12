@@ -18,9 +18,12 @@ function  getMovies(url) {
 function showMovies(data){
     main.innerHTML = '';
     data.forEach(movie => {
-        const {title, poster_path, vote_average, overview} = movie;
+        const {title, poster_path, vote_average, overview, id} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
+
+        // Cria um link para a página de detalhes do filme com o ID do filme como parâmetro
+        movieEl.addEventListener('click', () =>    window.location.href = `detalhes/detalhes.html?id=${id}`        );
         movieEl.innerHTML = `
             <img src="${img_url+poster_path}" alt="${title}">
             <div class="infos">

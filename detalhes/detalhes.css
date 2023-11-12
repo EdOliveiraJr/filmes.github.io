@@ -15,119 +15,52 @@ body   {
     font-family: 'Poppins', sans-serif;
 }
 
-header {
-    background-color: var(--secondary-color);
-    padding: 1rem;
+.details{
     display: flex;
-    justify-content: space-between;
-
-}
-
-.menu {
-    position: relative;
-}
-
-.menu-dropdown {
-    position: absolute;
-    background-color: var(--secondary-color);
-    top: 100%;
-    left: 0;
-    width: 120px;
-    display: none;
-    flex-direction: column;
-    border-radius: 0 0 10px 10px;
-}
-
-.menu-dropdown li {
-    padding: 10px;
-    list-style: none;
-    color: aliceblue;
-}
-
-.menu:hover .menu-dropdown {
-    display: flex;
-}
-
-.search {
-    background-color: transparent;
-    border: 2px solid var (--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    color: #fff;
-    font-family: inherit; 
-}
-
-.search:focus{
-    outline: 0;
-    background-color: var(--primary-color);
-}
-
-.search::placeholder{
-    color: aliceblue;
-}
-
-main {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
-.movie {
-    width: 300px;
-    margin: 1rem;
-}
-
-.movie img {
-    width: 100%;
-    box-shadow: #000000 0px 0px 50px;
-}
-
-.infos {
-    background-color: var(--secondary-color);
-    border-radius: 0 0 10px 10px;
-}
-
-.movie-info {
+.movie-details{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
 }
 
-.overview {
-    position: relative;
-    
-}
-
-
-.overview h5 {
-    padding: 10px;
-}
-
-.overview p {
-    border-radius: 10px;
-    text-align: justify;
-    display: none;
-    color: aliceblue;
-
-}
-
-.overview:hover p {
-    background-color: #00447fdf;
+.card-container {
     display: flex;
-    position: absolute;
-    width: 300px;
-    transform: translateY(-100%);
-    padding: 5px;
-}
-
-a {
-    text-decoration: none;
-    color: aliceblue;
-}
-
-a:hover {
-    background-color: #007bff;
-    padding: 5px;
+    gap: 15px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    margin: 20px;
+    padding: 15px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-image {
+    width: 50%;
+    height: 50%;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card-description {
+    font-size: 0.9em;
+    margin: 20px 0;
+}
+
+.card-details {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.card-details strong {
+    color: #333;
 }
