@@ -90,6 +90,11 @@ main {
 .movie {
     width: 300px;
     margin: 1rem;
+    cursor: pointer;
+}
+
+.movie:hover{
+    transform: scale(0.9);
 }
 
 .movie img {
@@ -112,7 +117,6 @@ main {
     position: relative;
     
 }
-
 
 .overview h5 {
     padding: 10px;
