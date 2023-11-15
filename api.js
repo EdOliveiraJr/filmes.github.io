@@ -20,8 +20,11 @@ function addToFavorites(movieId) {
   // Verifica se já existem filmes favoritos no localStorage
   let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 
+  // Verificar se o filme já está na lista
+  const isFavorite = checkIfFavorite(movieId);
+
   // Verifica se o filme já está na lista de favoritos
-  if (!favoriteMovies.includes(movieId)) {
+  if (!isFavorite) {
     // Adiciona o filme à lista de favoritos
     favoriteMovies.push(movieId);
     // Atualiza o localStorage com a nova lista de favoritos
@@ -30,12 +33,13 @@ function addToFavorites(movieId) {
     console.log(`Filme ${movieId} adicionado aos favoritos`);
   } else {
     // Remove o filme da lista de favoritos
-    favoriteMovies.splice(movieId, 1);
+    favoriteMovies = favoriteMovies.filter((id) => id !== movieId);
     // Atualiza o localStorage com a nova lista de favoritos
     localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
 
-    console.log(`Filme ${movieId} já está nos favoritos`);
+    console.log(`Filme ${movieId} removido dos favoritos`);
   }
+
 }
 
 function showMovies(data) {
@@ -56,7 +60,7 @@ function showMovies(data) {
                 <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
-            
+                 <i onclick="addToFavorites(${id})">Teste</i> 
             </div>
             <div class="overview">
                 <h5>Sinopse</h5>
@@ -67,6 +71,14 @@ function showMovies(data) {
 
     main.appendChild(movieEl);
   });
+}
+
+function checkIfFavorite(movieId) {
+  // Retrieve favorite movie IDs from localStorage
+  const favoriteMovieIds =
+    JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+
+  return favoriteMovieIds.includes(movieId);
 }
 
 function getColor(vote) {
