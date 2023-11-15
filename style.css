@@ -137,10 +137,11 @@ a:hover {
 }
 
 
-.color-red{
+.favorite{
     color: red;
+    fill: red;
 }
 
-.color-blue{
-    color: blue;
+.not-favorited{
+    color: white; 
 }

@@ -48,7 +48,6 @@ async function showFavorites() {
                 </div>
             `;
     });
-
     main.innerHTML = favoriteMovies.join("");
   } catch (error) {
     console.error(error);

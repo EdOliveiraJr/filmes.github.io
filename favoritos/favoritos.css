@@ -14,8 +14,8 @@ header {
     background-color: var(--secondary-color);
     padding: 1rem;
     display: flex;
-    justify-content: space-between;
-
+    justify-content: space-between; 
+    align-items: center;
 }
 
 body {
@@ -85,12 +85,6 @@ main {
 a {
     text-decoration: none;
     color: aliceblue;
-}
-
-a:hover {
-    background-color: #007bff;
-    padding: 5px;
-    border-radius: 10px;
 }
 
 .empty {

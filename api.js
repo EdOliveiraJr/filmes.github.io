@@ -60,10 +60,12 @@ function showMovies(data) {
                 <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
-               <i class="${
-                 isFavorite ? "color-red" : "color-blue"
-               }" onclick="addToFavorites(${id})">Teste</i>
-                </div>
+                <span class="material-symbols-outlined ${
+                  isFavorite ? "favorite" : "not-favorited"
+                }" onclick="addToFavorites(${id})">
+                    favorite
+                </span>
+            </div>
             <div class="overview">
                 <h5>Sinopse</h5>
                 <p>${overview}<p>
@@ -76,7 +78,7 @@ function showMovies(data) {
 }
 
 function checkIfFavorite(movieId) {
-  // Retrieve favorite movie IDs from localStorage
+  //checagem se o filme está na lista de favoritos
   const favoriteMovieIds =
     JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 
