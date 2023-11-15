@@ -137,11 +137,11 @@ a:hover {
 }
 
 
-.favorite{
+.favorite {
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 100;
     color: red;
-    fill: red;
-}
+} 
 
-.not-favorited{
-    color: white; 
+.not-favorited {
+    color: white;
 }
