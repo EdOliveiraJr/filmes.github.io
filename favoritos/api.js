@@ -10,7 +10,7 @@ async function showFavorites() {
 
   if (favoriteMovieIds.length === 0) {
     main.innerHTML =
-      '<div class="empty">Você ainda não adicionou nenhum filme aos favoritos.</div>';
+      '<div class="info">Você ainda não adicionou nenhum filme aos favoritos.</div>';
     return;
   }
 
@@ -31,7 +31,7 @@ async function showFavorites() {
     const favoriteMovies = movieDetails.map((movie) => {
       const { id, title, poster_path, vote_average, overview } = movie;
       return `
-                <div class="movie" onclick="redirectToDetails(${id})">
+                <div class="movie">
                     <img src="${img_url + poster_path}" alt="${title}">
                     <div class="infos">
                         <div class="movie-info">
@@ -48,11 +48,12 @@ async function showFavorites() {
                 </div>
             `;
     });
+
     main.innerHTML = favoriteMovies.join("");
   } catch (error) {
     console.error(error);
     main.innerHTML =
-      '<div class="error">Ocorreu um erro ao carregar os filmes favoritos.</div>';
+      '<div class="info">Ocorreu um erro ao carregar os filmes favoritos.</div>';
   }
 }
 
