@@ -137,8 +137,10 @@ a:hover {
 }
 
 
-.movie-info i.fa-solid.fa-heart {
+.color-red{
     color: red;
-    font-size: 20px;
-    padding-left: 5px;
+}
+
+.color-blue{
+    color: blue;
 }

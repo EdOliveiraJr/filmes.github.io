@@ -39,7 +39,6 @@ function addToFavorites(movieId) {
 
     console.log(`Filme ${movieId} removido dos favoritos`);
   }
-
 }
 
 function showMovies(data) {
@@ -47,6 +46,7 @@ function showMovies(data) {
   data.forEach((movie) => {
     const { title, poster_path, vote_average, overview, id } = movie;
     const movieEl = document.createElement("div");
+    const isFavorite = checkIfFavorite(id);
     movieEl.classList.add("movie");
 
     // Cria um link para a página de detalhes do filme com o ID do filme como parâmetro
@@ -60,8 +60,10 @@ function showMovies(data) {
                 <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
-                 <i onclick="addToFavorites(${id})">Teste</i> 
-            </div>
+               <i class="${
+                 isFavorite ? "color-red" : "color-blue"
+               }" onclick="addToFavorites(${id})">Teste</i>
+                </div>
             <div class="overview">
                 <h5>Sinopse</h5>
                 <p>${overview}<p>
