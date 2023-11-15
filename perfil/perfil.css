@@ -1,0 +1,50 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: aliceblue;
+}
+
+:root  {
+    --primary-color: #007bff;
+    --secondary-color: #00447f;
+}
+
+body   {
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.row>* {
+    margin: 0px;
+    padding: 0px;
+}
+.filmes {
+   margin: 20px;
+  
+}
+
+.card-text {
+    color: black;
+}
+
+.perfil {
+    margin-top: 20px;
+}
+
+main {
+    max-width: 100vh;
+}
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
