@@ -11,7 +11,8 @@ async function showFavorites() {
 
   if (favoriteMovieIds.length === 0) {
     main.innerHTML =
-      '<div class="info">Você ainda não adicionou nenhum filme aos favoritos.</div>';
+          '<div class="info">Você ainda não adicionou nenhum filme aos favoritos.</div>';
+      hideLoading();
     return;
   }
 
