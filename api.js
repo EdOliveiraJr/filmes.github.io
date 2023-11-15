@@ -21,38 +21,27 @@ function addToFavorites(movieId) {
   let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 
   // Verifica se o filme já está na lista de favoritos
-  const movieIndex = favoriteMovies.indexOf(movieId);
-  if (movieIndex === -1) {
+  if (!favoriteMovies.includes(movieId)) {
     // Adiciona o filme à lista de favoritos
     favoriteMovies.push(movieId);
+    // Atualiza o localStorage com a nova lista de favoritos
+    localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
 
-    // Informa no console que o filme foi adicionado aos favoritos
     console.log(`Filme ${movieId} adicionado aos favoritos`);
   } else {
     // Remove o filme da lista de favoritos
-    favoriteMovies.splice(movieIndex, 1);
+    favoriteMovies.splice(movieId, 1);
+    // Atualiza o localStorage com a nova lista de favoritos
+    localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
 
-    // Informa no console que o filme foi removido dos favoritos
-    console.log(`Filme ${movieId} removido dos favoritos`);
+    console.log(`Filme ${movieId} já está nos favoritos`);
   }
-
-  // Atualiza o localStorage com a nova lista de favoritos
-  localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
-
-  // Atualiza a exibição dos filmes na tela
-  showMovies(
-    [...document.querySelectorAll(".movie")].map(
-      (movieEl) => movieEl.dataset.movieId
-    )
-  );
 }
 
 function showMovies(data) {
   main.innerHTML = "";
   data.forEach((movie) => {
     const { title, poster_path, vote_average, overview, id } = movie;
-    const isFavorite = checkIfFavorite(id);
-
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
 
@@ -67,10 +56,8 @@ function showMovies(data) {
                 <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
-                <i class="fa fa-solid fa-heart ${
-                  isFavorite ? "fas fa-heart" : "far fa-heart"
-                }" onclick="addToFavorites(${id})"></i>
-                </div>
+            
+            </div>
             <div class="overview">
                 <h5>Sinopse</h5>
                 <p>${overview}<p>
