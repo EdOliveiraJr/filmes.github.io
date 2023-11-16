@@ -52,6 +52,7 @@ main h1 strong {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 #loginForm .form-input-container input {
@@ -60,6 +61,11 @@ main h1 strong {
     outline: none;
     border: none;
     color: #000000;
+}
+
+#loginForm .form-input-container p {
+    color: red;
+    font-size: 14px;
 }
 
 #loginForm .form-btn-container {
