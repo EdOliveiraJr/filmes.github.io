@@ -147,3 +147,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+a:hover {
+    background-color: #007bff;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.favorite {
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 100;
+    color: red;
+} 
+
+.not-favorited {
+    color: white;
+}

@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: aliceblue;
+}
+
+:root  {
+    --primary-color: #007bff;
+    --secondary-color: #00447f;
+}
+
+body   {
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.row>* {
+    margin: 0px;
+    padding: 0px;
+}
+.filmes {
+   margin: 20px;
+  
+}
+
+.card-text {
+    color: black;
+}
+
+.perfil {
+    margin-top: 20px;
+}
+
+main {
+    max-width: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+
+.menu {
+    position: relative;
+    padding: 10px;
+}
+
+.menu-dropdown {
+    position: relative;
+    background-color: var(--secondary-color);
+    top: 100%;
+    left: 0;
+    width: 120px;
+    display: none;
+    flex-direction: column;
+    border-radius: 0 0 10px 10px;
+}
+
+.menu-dropdown li {
+    padding: 10px;
+    list-style: none;
+    color: aliceblue;
+}
+
+.menu:hover .menu-dropdown {
+    display: flex;
+}
+
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+a:hover {
+    background-color: #007bff;
+    padding: 5px;
+    border-radius: 10px;
+}

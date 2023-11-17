@@ -12,7 +12,7 @@
 }
 
 body   {
-    background: var(--background-color);
+    background-color: #f3f3f3;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -24,11 +24,65 @@ header {
 
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1 {
+    font-size: 52px;
+    color: #000000;
+}
+
+main h1 strong {
+    color: var(--primary-color); 
+}
+
 #loginForm {
-    width: 500px;
+    width: 80vw;
+    max-width: 500px;
     background-color: var(--secondary-color);
-    padding: 1rem;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 14px;
     margin-top: 10%;
 }
 
+#loginForm .form-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#loginForm .form-input-container input {
+    padding: 6px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: #000000;
+}
+
+#loginForm .form-input-container p {
+    color: red;
+    font-size: 14px;
+}
+
+#loginForm .form-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#loginForm .form-btn-container button {
+    margin-top: 10px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    padding: 10px 30px;
+    border-radius: 4px;
+}
+
+#loginForm .form-btn-container button:hover {
+    color: #fff;
+    background-color: var(--secondary-color);
+}
