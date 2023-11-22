@@ -40,6 +40,15 @@ body   {
     transition: transform 0.3s ease;
 }
 
+.card-container  .material-symbols-outlined{
+    margin-bottom: 10px;
+}
+
+.image-container{
+    display: flex;
+    flex-direction: column;
+}
+
 .card-image {
     width: 50%;
     height: 50%;

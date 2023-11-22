@@ -6,10 +6,10 @@ let senhaError = document.getElementById("inputPassordError");
 function autenticarUsuario(email, senha) {
   const usuariosString = localStorage.getItem('usuarios');
   const usuarios = usuariosString ? JSON.parse(usuariosString) : [];
-
   const usuarioAutenticado = usuarios.find(usuario => usuario.email === email);
 
   if (usuarioAutenticado && usuarioAutenticado.senha === senha) {
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuarioAutenticado));
     return true; 
   } else {
     return false; 
@@ -19,6 +19,10 @@ function autenticarUsuario(email, senha) {
 function validarEmail(email) {
   var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
+}
+
+function goToRegister() {
+  window.location.href = '../cadastro/cadastro.html';
 }
 
 function login () {

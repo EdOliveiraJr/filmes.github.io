@@ -17,28 +17,40 @@ function getMovies(url) {
 }
 
 function addToFavorites(movieId) {
-  // Verifica se já existem filmes favoritos no localStorage
-  let favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+  const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioLogado')) ;
 
   // Verificar se o filme já está na lista
   const isFavorite = checkIfFavorite(movieId);
 
+  // verifica se esta logado
+  if (!localStorage.getItem('usuarioLogado')
+  ) {
+    window.location.href = "./login/login.html";
+    alert("Você precisa estar logado!");
+    return
+  }
+
   // Verifica se o filme já está na lista de favoritos
+  let  newFavoriteMovies = [];
   if (!isFavorite) {
     // Adiciona o filme à lista de favoritos
-    favoriteMovies.push(movieId);
-    // Atualiza o localStorage com a nova lista de favoritos
-    localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
-
-    console.log(`Filme ${movieId} adicionado aos favoritos`);
+    newFavoriteMovies = usuarioAutenticado.favoriteMovies;
+    newFavoriteMovies.push(movieId)
   } else {
     // Remove o filme da lista de favoritos
-    favoriteMovies = favoriteMovies.filter((id) => id !== movieId);
-    // Atualiza o localStorage com a nova lista de favoritos
-    localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovies));
+    usuarioAutenticado.favoriteMovies.filter((id) => id !== movieId);
 
-    console.log(`Filme ${movieId} removido dos favoritos`);
+    // Remove o filme da lista de favoritos
+    newFavoriteMovies = usuarioAutenticado.favoriteMovies.filter((id) => id !== movieId);
   }
+
+  // Atualiza o localStorage
+  localStorage.setItem("usuarioLogado", JSON.stringify({...usuarioAutenticado, favoriteMovies: newFavoriteMovies}));
+
+  // atualiza a lista de users
+  const localUsers = JSON.parse(localStorage.getItem('usuarios'));
+  const newUserList = localUsers.filter(usuario => usuario.email !== usuarioAutenticado.email);
+  localStorage.setItem("usuarios", JSON.stringify([...newUserList, usuarioAutenticado]));
 
   // Recarrega a página
   window.location.reload();
@@ -52,9 +64,8 @@ function showMovies(data) {
     const isFavorite = checkIfFavorite(id);
     movieEl.classList.add("movie");
 
-    
     movieEl.innerHTML = `
-            <a href="../detalhes/detalhes.html?id=${id}">
+            <a href="./detalhes/detalhes.html?id=${id}">
                 <img src="${img_url + poster_path}" alt="${title}">
             </a>   
             <div class="infos">
@@ -78,16 +89,10 @@ function showMovies(data) {
   });
 }
 
-function redirectToDetails(movieId) {
-  window.location.href = `detalhes/detalhes.html?id=${movieId}`;
-}
-
 function checkIfFavorite(movieId) {
   //checagem se o filme está na lista de favoritos
-  const favoriteMovieIds =
-    JSON.parse(localStorage.getItem("favoriteMovies")) || [];
-
-  return favoriteMovieIds.includes(movieId);
+  const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioLogado')) ;
+  return usuarioAutenticado ? usuarioAutenticado.favoriteMovies.includes(movieId) : false;
 }
 
 function getColor(vote) {

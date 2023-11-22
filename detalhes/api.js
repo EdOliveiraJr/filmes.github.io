@@ -24,8 +24,16 @@ async function fetchMovieDetails(movieId) {
 function displayMovieDetails(movie) {
     const movieDetailsContainer = document.getElementById('movieDetails');
     movieDetailsContainer.innerHTML = `
+    
     <div class="card-container" id="movieDetails">
-        <img src="${img_url+movie.poster_path}" alt="${movie.title} class="card-image" id="moviePoster">
+        <div class="image-container">
+          <a href="../index.html">
+              <span class="material-symbols-outlined">
+                  arrow_back
+              </span>
+          </a>
+          <img src="${img_url+movie.poster_path}" alt="${movie.title} class="card-image" id="moviePoster">
+        </div>
         <div class="movie-details">
           <div class="movie-details-top">
             <h2 class="card-title" id="movieTitle">${movie.title}</h2>
@@ -42,12 +50,6 @@ function displayMovieDetails(movie) {
         </div>
     </div>
     `;
-
-    // const movieRating = document.getElementById('movieRating');
-
-    // // Adiciona o sistema de classificação de 5 estrelas
-    // const starRating = (movie.vote_average / 2); 
-    // movieRating.innerHTML = getStarRatingHTML(starRating);
 }
 
 // Obtém o ID do filme da URL e exibe os detalhes

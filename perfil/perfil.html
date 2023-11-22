@@ -15,18 +15,23 @@
         <div class="menu-dropdown">
             <ul>
                 <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
                     <a href="../perfil/perfil.html">Meu Perfil</a>
                 </li>
                 <li>
-                    <a href="">Favoritos</a>
+                    <a href="../favoritos/favoritos.html">Favoritos</a>
                 </li>
                 <li>
-                    <a href="">Sobre</a> 
+                    <a href="../sobre/sobre.html">Sobre</a> 
                 </li>
                 <li>
-                    <a href="">Sair</a>
+                    <a href="../login/login.html">login</a> 
                 </li>
-            </ul>
+                <li>
+                    <a  onclick="logOut()">Sair</a>
+                </li>
         </div>
     </div>
     <div class="card perfil" style="max-width: 640px;">
@@ -58,6 +63,7 @@
     </div>
       <main id="main" class="row row-cols-1 row-cols-md-2 g-4  p-3 m-3"></main>
       <script src="api.js"></script>
+      <script src="../utils.js"></script>
 </body>
 
 </html>

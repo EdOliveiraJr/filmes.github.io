@@ -71,7 +71,8 @@ main h1 strong {
 
 #loginForm .form-btn-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 #loginForm .form-btn-container button {

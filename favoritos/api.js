@@ -6,10 +6,9 @@ const main = document.getElementById("main");
 const loadingDiv = document.getElementById("loading");
 
 async function showFavorites() {
-  const favoriteMovieIds =
-    JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+  const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioLogado')) ;
 
-  if (favoriteMovieIds.length === 0) {
+  if (usuarioAutenticado.favoriteMovies.length === 0) {
     main.innerHTML =
           '<div class="info">Você ainda não adicionou nenhum filme aos favoritos.</div>';
       hideLoading();
@@ -18,7 +17,7 @@ async function showFavorites() {
 
   try {
     const movieDetails = [];
-    for (const movieId of favoriteMovieIds) {
+    for (const movieId of usuarioAutenticado.favoriteMovies) {
       try {
         const url = `${base_url}/movie/${movieId}?${api_key}`;
         const response = await axios.get(url);

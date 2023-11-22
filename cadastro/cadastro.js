@@ -70,6 +70,7 @@ function cadastrar() {
       nome,
       email,
       senha,
+      favoriteMovies: []
     }
 
     const usuariosString = localStorage.getItem('usuarios');
@@ -79,7 +80,7 @@ function cadastrar() {
     const usuariosStringNova = JSON.stringify(usuarios);
     localStorage.setItem('usuarios', usuariosStringNova);
 
-    localStorage.setItem('usuarioLogado', novoUsuario.email);
+    localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
     limparForm();
     window.location.href = "../index.html";
   }
