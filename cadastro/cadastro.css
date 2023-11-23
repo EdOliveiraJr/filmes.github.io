@@ -1,80 +1,94 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    color: aliceblue;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: aliceblue;
 }
 
-:root  {
-    --primary-color: #007bff;
-    --secondary-color: #00447f;
-    --background-color: radial-gradient(circle, rgba(0,212,255,1) 20%, rgba(1,146,187,1) 68%, rgba(9,9,121,1) 96%);
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #00447f;
+  --background-color: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 1) 20%,
+    rgba(1, 146, 187, 1) 68%,
+    rgba(9, 9, 121, 1) 96%
+  );
+}
+header {
+  width: 100%;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
 }
 
-body   {
-    background-color:  #f3f3f3;
-    font-family: 'Poppins', sans-serif;
+body {
+  background-color: #f3f3f3;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main h1 {
-    font-size: 52px;
-    color: #000000;
+  font-size: 52px;
+  color: #000000;
 }
 
 main h1 strong {
-    color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 #loginForm {
-    width: 80vw;
-    max-width: 500px;
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 14px;
-    margin-top: 10%;
+  width: 80vw;
+  max-width: 500px;
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 14px;
+  margin-top: 10%;
 }
 
 #loginForm .form-input-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 #loginForm .form-input-container input {
-    padding: 6px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    color: #000000;
+  padding: 6px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  color: #000000;
 }
 
 #loginForm .form-input-container p {
-    color: red;
-    font-size: 14px;
+  color: red;
+  font-size: 14px;
 }
 
 #loginForm .form-btn-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #loginForm .form-btn-container button {
-    margin-top: 10px;
-    border: 1px solid #000000;
-    background-color: #000000;
-    padding: 10px 30px;
-    border-radius: 4px;
+  margin-top: 10px;
+  border: 1px solid #000000;
+  background-color: #000000;
+  padding: 10px 30px;
+  border-radius: 4px;
 }
 
 #loginForm .form-btn-container button:hover {
-    color: #fff;
-    background-color: var(--secondary-color);
+  color: #fff;
+  background-color: var(--secondary-color);
 }

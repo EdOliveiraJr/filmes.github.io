@@ -17,40 +17,49 @@ function getMovies(url) {
 }
 
 function addToFavorites(movieId) {
-  const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioLogado')) ;
+  const usuarioAutenticado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
   // Verificar se o filme já está na lista
   const isFavorite = checkIfFavorite(movieId);
 
   // verifica se esta logado
-  if (!localStorage.getItem('usuarioLogado')
-  ) {
+  if (!localStorage.getItem("usuarioLogado")) {
     window.location.href = "./login/login.html";
     alert("Você precisa estar logado!");
-    return
+    return;
   }
 
   // Verifica se o filme já está na lista de favoritos
-  let  newFavoriteMovies = [];
+  let newFavoriteMovies = [];
   if (!isFavorite) {
     // Adiciona o filme à lista de favoritos
     newFavoriteMovies = usuarioAutenticado.favoriteMovies;
-    newFavoriteMovies.push(movieId)
+    newFavoriteMovies.push(movieId);
   } else {
     // Remove o filme da lista de favoritos
     usuarioAutenticado.favoriteMovies.filter((id) => id !== movieId);
 
     // Remove o filme da lista de favoritos
-    newFavoriteMovies = usuarioAutenticado.favoriteMovies.filter((id) => id !== movieId);
+    newFavoriteMovies = usuarioAutenticado.favoriteMovies.filter(
+      (id) => id !== movieId
+    );
   }
 
   // Atualiza o localStorage
-  localStorage.setItem("usuarioLogado", JSON.stringify({...usuarioAutenticado, favoriteMovies: newFavoriteMovies}));
+  localStorage.setItem(
+    "usuarioLogado",
+    JSON.stringify({ ...usuarioAutenticado, favoriteMovies: newFavoriteMovies })
+  );
 
   // atualiza a lista de users
-  const localUsers = JSON.parse(localStorage.getItem('usuarios'));
-  const newUserList = localUsers.filter(usuario => usuario.email !== usuarioAutenticado.email);
-  localStorage.setItem("usuarios", JSON.stringify([...newUserList, usuarioAutenticado]));
+  const localUsers = JSON.parse(localStorage.getItem("usuarios"));
+  const newUserList = localUsers.filter(
+    (usuario) => usuario.email !== usuarioAutenticado.email
+  );
+  localStorage.setItem(
+    "usuarios",
+    JSON.stringify([...newUserList, usuarioAutenticado])
+  );
 
   // Recarrega a página
   window.location.reload();
@@ -91,8 +100,10 @@ function showMovies(data) {
 
 function checkIfFavorite(movieId) {
   //checagem se o filme está na lista de favoritos
-  const usuarioAutenticado = JSON.parse(localStorage.getItem('usuarioLogado')) ;
-  return usuarioAutenticado ? usuarioAutenticado.favoriteMovies.includes(movieId) : false;
+  const usuarioAutenticado = JSON.parse(localStorage.getItem("usuarioLogado"));
+  return usuarioAutenticado
+    ? usuarioAutenticado.favoriteMovies.includes(movieId)
+    : false;
 }
 
 function getColor(vote) {

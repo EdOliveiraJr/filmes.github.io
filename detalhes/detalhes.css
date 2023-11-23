@@ -1,76 +1,91 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    color: aliceblue;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: aliceblue;
 }
 
-:root  {
-    --primary-color: #007bff;
-    --secondary-color: #00447f;
-    --background-color: radial-gradient(circle, rgba(0,212,255,1) 20%, rgba(1,146,187,1) 68%, rgba(9,9,121,1) 96%);
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #00447f;
+  --background-color: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 1) 20%,
+    rgba(1, 146, 187, 1) 68%,
+    rgba(9, 9, 121, 1) 96%
+  );
 }
 
-body   {
-    background: var(--background-color);
-    font-family: 'Poppins', sans-serif;
+body {
+  background: var(--background-color);
+  font-family: "Poppins", sans-serif;
 }
 
-.details{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.movie-details{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-container {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-    background-color: var(--secondary-color);
-    margin: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.card-container  .material-symbols-outlined{
-    margin-bottom: 10px;
+.card-container .material-symbols-outlined {
+  margin-bottom: 10px;
 }
 
-.image-container{
-    display: flex;
-    flex-direction: column;
+.image-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .card-image {
-    width: 50%;
-    height: 50%;
-    border-radius: 8px;
+  width: 50%;
+  height: 50%;
+  border-radius: 8px;
 }
 
 .card-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 10px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 .card-description {
-    font-size: 0.9em;
-    margin: 20px 0;
+  font-size: 0.9em;
+  margin: 20px 0;
 }
 
 .card-details {
-    font-size: 0.8em;
-    color: #888;
+  font-size: 0.8em;
+  color: #888;
 }
 
 .card-details strong {
-    color: #333;
+  color: #333;
+}
+
+@media screen and (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+  }
+
+  .image-container {
+    align-items: center;
+  }
 }
